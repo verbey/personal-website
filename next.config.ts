@@ -1,7 +1,3 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
-	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-};
-
-export default nextConfig;
+/* eslint-disable @typescript-eslint/no-require-imports */
+const withMDX = require('@next/mdx')();
+module.exports = withMDX();
