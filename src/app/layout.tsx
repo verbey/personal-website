@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import styles from './layout.module.css';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -14,9 +15,26 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={styles.body}>
+				<nav>
+					<ul>
+						<li>
+							<Link href='/'>Home</Link>
+						</li>
+						<li>
+							<Link href='/blog'>Blog</Link>
+						</li>
+						<li>
+							<Link href='/projects'>Projects</Link>
+						</li>
+						<li>
+							<Link href='/about'>About me</Link>
+						</li>
+					</ul>
+				</nav>
 				<main>{children}</main>
 				<footer className={styles.footer}>
-					Made with coffee and tea love and Next and many other things
+					Made with coffee and tea and love and Next and many other
+					things
 				</footer>
 			</body>
 		</html>
