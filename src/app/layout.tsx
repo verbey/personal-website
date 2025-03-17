@@ -25,7 +25,12 @@ export default function RootLayout({
 							<Link href='/blog'>Blog</Link>
 						</li>
 						<li>
-							<Link href='/projects'>Projects</Link>
+							<a
+								href='https://github.com/verbey?tab=repositories'
+								target='_blank'
+							>
+								Projects
+							</a>
 						</li>
 						<li>
 							<Link href='/about'>About me</Link>
