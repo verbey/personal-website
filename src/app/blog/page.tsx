@@ -40,9 +40,9 @@ export default function Archive() {
 					<article key={post.slug}>
 						<h2>{post.frontmatter.title}</h2>
 						<time dateTime={post.frontmatter.date}>
-							{new Date(
-								post.frontmatter.date
-							).toLocaleDateString()}
+							{new Date(post.frontmatter.date).toLocaleDateString(
+								'en-GB'
+							)}
 						</time>
 						<ul>
 							{post.frontmatter.tags.map(
