@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import styles from './layout.module.css';
+import './reset.css';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -15,17 +16,22 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={styles.body}>
-				<nav>
-					<ul>
+			<body>
+				<nav className={styles.navbar}>
+					<ul className={styles.navbarElementsContainer}>
 						<li>
-							<Link href='/'>Home</Link>
+							<Link href='/' className={styles.link}>
+								Home
+							</Link>
 						</li>
 						<li>
-							<Link href='/blog'>Blog</Link>
+							<Link href='/blog' className={styles.link}>
+								Blog
+							</Link>
 						</li>
 						<li>
 							<a
+								className={styles.link}
 								href='https://github.com/verbey?tab=repositories'
 								target='_blank'
 							>
@@ -33,7 +39,9 @@ export default function RootLayout({
 							</a>
 						</li>
 						<li>
-							<Link href='/about'>About me</Link>
+							<Link href='/about' className={styles.link}>
+								About me
+							</Link>
 						</li>
 					</ul>
 				</nav>
