@@ -13,3 +13,23 @@ html {
 	color: var(--text);
 	background-color: var(--bg);
 }
+
+.navbarElementsContainer {
+	display: flex;
+	gap: 4px;
+	list-style: none;
+}
+
+.link {
+	color: var(--text);
+	background-color: var(--buttons);
+	text-decoration: none;
+	border-radius: 8px;
+	padding: 4px 8px;
+	border: solid 2px var(--buttons);
+}
+
+.link:hover {
+	color: var(--accent);
+	background: 0;
+}
