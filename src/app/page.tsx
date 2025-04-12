@@ -10,7 +10,8 @@ export default function Home() {
 			</p>
 			<p>
 				You could check out my blog or the projects I&#39;m working on
-				using the navigation menu above.
+				using the navigation menu above. There is also an about me page
+				where you can learn more about me, my interests and skills.
 			</p>
 			<p>
 				This domain is also home to my email adress -{' '}
