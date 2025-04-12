@@ -1,5 +1,15 @@
-html,
-body {
-	width: 100dvw;
-	overflow-x: hidden;
+:root {
+	--text: rgba(241, 244, 246, 1);
+	--accent: rgba(178, 8, 18, 1);
+	--buttons: rgba(53, 51, 57, 1);
+	--bg: rgba(9, 7, 7, 1);
+}
+
+html {
+	padding: 32px 30svw;
+	min-height: 100svh;
+	width: 100svw;
+	box-sizing: border-box;
+	color: var(--text);
+	background-color: var(--bg);
 }
