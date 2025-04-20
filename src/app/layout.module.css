@@ -31,7 +31,7 @@ body {
 
 .navbarElementsContainer {
 	display: flex;
-	gap: 4px;
+	gap: 0.5svw;
 	list-style: none;
 }
 
@@ -39,9 +39,8 @@ body {
 	color: var(--text);
 	background-color: var(--buttons);
 	text-decoration: none;
-	border-radius: 8px;
+	border-left: 0.5svw solid var(--accent);
 	padding: 4px 8px;
-	border: solid 2px var(--buttons);
 }
 
 .navbarLink:hover {

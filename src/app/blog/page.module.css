@@ -4,6 +4,10 @@
 	border-left: 1svw solid var(--accent);
 }
 
+.post:hover {
+	background: 0;
+}
+
 .post > h2 {
 	color: var(--accent);
 }
