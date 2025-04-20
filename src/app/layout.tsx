@@ -11,17 +11,8 @@ const departureMono = localFont({
 			weight: '400',
 			style: 'normal',
 		},
-		{
-			path: './fonts/DepartureMono-Regular.woff',
-			weight: '400',
-			style: 'normal',
-		},
-		{
-			path: './fonts/DepartureMono-Regular.otf',
-			weight: '400',
-			style: 'normal',
-		},
 	],
+	fallback: ['monospace', 'system-ui'],
 });
 
 export const metadata: Metadata = {
