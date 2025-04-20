@@ -8,9 +8,9 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--text: rgba(241, 244, 246, 1);
-		--accent: rgb(228, 7, 21);
+		--accent: rgb(227, 27, 40);
 		--buttons: rgba(53, 51, 57, 1);
-		--bg: rgba(30, 35, 38, 1);
+		--bg: rgb(23, 27, 29);
 	}
 }
 
@@ -29,7 +29,7 @@ html {
 	list-style: none;
 }
 
-.link {
+.navbarLink {
 	color: var(--text);
 	background-color: var(--buttons);
 	text-decoration: none;
@@ -38,7 +38,12 @@ html {
 	border: solid 2px var(--buttons);
 }
 
-.link:hover {
+.navbarLink:hover {
 	color: var(--accent);
 	background: 0;
+}
+
+.link {
+	color: var(--accent);
+	text-decoration: underline;
 }

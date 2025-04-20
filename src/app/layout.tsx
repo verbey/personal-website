@@ -20,18 +20,18 @@ export default function RootLayout({
 				<nav className={styles.navbar}>
 					<ul className={styles.navbarElementsContainer}>
 						<li>
-							<Link href='/' className={styles.link}>
+							<Link href='/' className={styles.navbarLink}>
 								Home
 							</Link>
 						</li>
 						<li>
-							<Link href='/blog' className={styles.link}>
+							<Link href='/blog' className={styles.navbarLink}>
 								Blog
 							</Link>
 						</li>
 						<li>
 							<a
-								className={styles.link}
+								className={styles.navbarLink}
 								href='https://github.com/verbey?tab=repositories'
 								target='_blank'
 							>
@@ -39,7 +39,7 @@ export default function RootLayout({
 							</a>
 						</li>
 						<li>
-							<Link href='/about' className={styles.link}>
+							<Link href='/about' className={styles.navbarLink}>
 								About me
 							</Link>
 						</li>

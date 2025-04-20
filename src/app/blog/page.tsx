@@ -1,4 +1,5 @@
 import styles from './page.module.css';
+import layoutStyles from '../layout.module.css';
 import fs from 'fs';
 import graymatter from 'gray-matter';
 
@@ -52,7 +53,12 @@ export default function Archive() {
 							)}
 						</ul>
 						<p>{post.frontmatter.description}</p>
-						<a href={`/blog/${post.slug}`}>Read more</a>
+						<a
+							href={`/blog/${post.slug}`}
+							className={layoutStyles.link}
+						>
+							Read more
+						</a>
 					</article>
 				))}
 			</main>

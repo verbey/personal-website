@@ -1,4 +1,5 @@
 import styles from './page.module.css';
+import layoutStyles from './layout.module.css';
 
 export default function Home() {
 	return (
@@ -15,8 +16,13 @@ export default function Home() {
 			</p>
 			<p>
 				This domain is also home to my email adress -{' '}
-				<a href='mailto:victor@cherkashyn.me'>victor@cherkashyn.me</a>.
-				feel free to drop by and tell me you&#39;ve been here.
+				<a
+					href='mailto:victor@cherkashyn.me'
+					className={layoutStyles.link}
+				>
+					victor@cherkashyn.me
+				</a>
+				. feel free to drop by and tell me you&#39;ve been here.
 			</p>
 		</div>
 	);
