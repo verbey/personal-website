@@ -1,5 +1,5 @@
-import styles from './page.module.css';
+import infoPageStyles from '../page.module.css';
 
 export default function About() {
-	return <div className={styles.page}>About me</div>;
+	return <div className={infoPageStyles.page}>About me</div>;
 }

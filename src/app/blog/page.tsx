@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import infoPageStyles from '../page.module.css';
 import layoutStyles from '../layout.module.css';
 import fs from 'fs';
 import graymatter from 'gray-matter';
@@ -32,7 +32,7 @@ function getPosts(): {
 export default function Archive() {
 	const posts = getPosts();
 	return (
-		<div className={styles.page}>
+		<div className={infoPageStyles.page}>
 			<header>
 				<h1>Blog Posts</h1>
 			</header>
