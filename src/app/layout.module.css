@@ -53,10 +53,15 @@ body {
 .link {
 	color: var(--accent);
 	text-decoration: underline;
+	word-break: break-all;
 }
 
 @media screen and (max-width: 1200px) {
 	html {
 		padding: 16px 8svw;
 	}
+}
+
+.footer {
+	line-height: 1.5;
 }

@@ -63,7 +63,9 @@ export default function Archive() {
 									)}
 								</ul>
 							</div>
-							<p>{post.frontmatter.description}</p>
+							<p className={infoPageStyles.textBlock}>
+								{post.frontmatter.description}
+							</p>
 						</article>
 					</a>
 				))}
