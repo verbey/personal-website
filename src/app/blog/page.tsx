@@ -1,5 +1,5 @@
+import styles from './page.module.css';
 import infoPageStyles from '../page.module.css';
-import layoutStyles from '../layout.module.css';
 import fs from 'fs';
 import graymatter from 'gray-matter';
 
@@ -38,28 +38,34 @@ export default function Archive() {
 			</header>
 			<main>
 				{posts.map((post) => (
-					<article key={post.slug}>
-						<h2>{post.frontmatter.title}</h2>
-						<time dateTime={post.frontmatter.date}>
-							{new Date(post.frontmatter.date).toLocaleDateString(
-								'en-GB'
-							)}
-						</time>
-						<ul>
-							{post.frontmatter.tags.map(
-								(tag: string, index: number) => (
-									<li key={index}>{tag}</li>
-								)
-							)}
-						</ul>
-						<p>{post.frontmatter.description}</p>
-						<a
-							href={`/blog/${post.slug}`}
-							className={layoutStyles.link}
-						>
-							Read more
-						</a>
-					</article>
+					<a
+						key={post.slug}
+						href={`/blog/${post.slug}`}
+						className={styles.link}
+					>
+						<article className={styles.post}>
+							<h2>{post.frontmatter.title}</h2>
+							<div className={styles.metadataContainer}>
+								<div>Posted on:</div>
+								<time dateTime={post.frontmatter.date}>
+									{new Date(
+										post.frontmatter.date
+									).toLocaleDateString('en-GB')}
+								</time>
+							</div>
+							<div className={styles.metadataContainer}>
+								<div>Tags:</div>
+								<ul className={styles.tags}>
+									{post.frontmatter.tags.map(
+										(tag: string, index: number) => (
+											<li key={index}>{tag}</li>
+										)
+									)}
+								</ul>
+							</div>
+							<p>{post.frontmatter.description}</p>
+						</article>
+					</a>
 				))}
 			</main>
 		</div>

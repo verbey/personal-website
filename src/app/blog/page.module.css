@@ -1,0 +1,25 @@
+.post {
+	background: var(--buttons);
+	padding: 1svh 1svw;
+	border-left: 1svw solid var(--accent);
+}
+
+.post > h2 {
+	color: var(--accent);
+}
+
+.link {
+	text-decoration: none;
+	color: var(--text);
+}
+
+.tags {
+	color: var(--accent);
+	display: flex;
+	gap: 1svw;
+}
+
+.metadataContainer {
+	display: flex;
+	gap: 1rem;
+}
