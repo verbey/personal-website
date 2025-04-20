@@ -2,6 +2,27 @@ import type { Metadata } from 'next';
 import styles from './layout.module.css';
 import './reset.css';
 import Link from 'next/link';
+import localFont from 'next/font/local';
+
+const departureMono = localFont({
+	src: [
+		{
+			path: './fonts/DepartureMono-Regular.woff2',
+			weight: '400',
+			style: 'normal',
+		},
+		{
+			path: './fonts/DepartureMono-Regular.woff',
+			weight: '400',
+			style: 'normal',
+		},
+		{
+			path: './fonts/DepartureMono-Regular.otf',
+			weight: '400',
+			style: 'normal',
+		},
+	],
+});
 
 export const metadata: Metadata = {
 	title: 'Victor Cherkashyn',
@@ -15,7 +36,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
+		<html lang='en' className={departureMono.className}>
 			<body>
 				<nav className={styles.navbar}>
 					<ul className={styles.navbarElementsContainer}>
