@@ -1,8 +1,17 @@
 :root {
-	--text: rgba(241, 244, 246, 1);
-	--accent: rgba(178, 8, 18, 1);
-	--buttons: rgba(53, 51, 57, 1);
-	--bg: rgba(9, 7, 7, 1);
+	--text: rgba(30, 35, 38, 1);
+	--accent: rgb(228, 7, 21);
+	--buttons: rgb(219, 218, 221);
+	--bg: rgba(241, 244, 246, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text: rgba(241, 244, 246, 1);
+		--accent: rgb(228, 7, 21);
+		--buttons: rgba(53, 51, 57, 1);
+		--bg: rgba(30, 35, 38, 1);
+	}
 }
 
 html {
