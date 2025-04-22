@@ -1,9 +1,6 @@
 import type { MDXComponents } from 'mdx/types';
-
-// This file allows you to provide custom React components
-// to be used in MDX files. You can import and use any
-// React component you want, including inline styles,
-// components from other libraries, and more.
+import Link from 'next/link';
+import styles from './mdx-components.module.css';
 
 export const mdxComponents: MDXComponents = {
 	// Allows customizing built-in components, e.g. to add styling.
@@ -35,4 +32,11 @@ export const mdxComponents: MDXComponents = {
 			{children}
 		</h6>
 	),
+	a: ({ children, ...props }) => {
+		return (
+			<Link {...props} href={props.href || ''} className={styles.link}>
+				{children}
+			</Link>
+		);
+	},
 };

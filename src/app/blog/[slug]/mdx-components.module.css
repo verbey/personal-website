@@ -1,0 +1,9 @@
+.link {
+	color: var(--accent);
+}
+
+@media screen and (max-width: 400px) {
+	.link {
+		word-break: break-all;
+	}
+}
