@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import fs from 'fs';
 import graymatter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { mdxComponents } from './mdx-components';
 
 function getPost(postName: string): {
 	slug: string;
@@ -43,7 +44,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
 			</header>
 			<main>
 				<article>
-					<MDXRemote source={post.content} />
+					<MDXRemote
+						source={post.content}
+						components={mdxComponents}
+					/>
 				</article>
 			</main>
 		</div>
