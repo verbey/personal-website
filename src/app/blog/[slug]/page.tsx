@@ -32,11 +32,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
 	return (
 		<div className={styles.page}>
 			<header>
-				<h1>{post.frontmatter.title}</h1>
+				<h1 className={styles.title}>{post.frontmatter.title}</h1>
 				<time dateTime={post.frontmatter.date}>
 					{new Date(post.frontmatter.date).toLocaleDateString()}
 				</time>
-				<ul>
+				<ul className={styles.tagContainer}>
 					{post.frontmatter.tags.map((tag: string, index: number) => (
 						<li key={index}>{tag}</li>
 					))}
