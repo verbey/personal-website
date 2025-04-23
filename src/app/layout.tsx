@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './layout.module.css';
 import './reset.css';
+import './globals.css';
 import Link from 'next/link';
 import localFont from 'next/font/local';
 
