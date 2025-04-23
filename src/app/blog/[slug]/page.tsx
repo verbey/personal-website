@@ -3,6 +3,10 @@ import fs from 'fs';
 import graymatter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { mdxComponents } from './mdx-components';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkToc from 'remark-toc';
 
 function getPost(postName: string): {
 	slug: string;
@@ -47,6 +51,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
 					<MDXRemote
 						source={post.content}
 						components={mdxComponents}
+						options={{
+							mdxOptions: {
+								remarkPlugins: [remarkGfm, remarkToc],
+								rehypePlugins: [
+									rehypeSlug,
+									rehypeAutolinkHeadings,
+								],
+							},
+						}}
 					/>
 				</article>
 			</main>

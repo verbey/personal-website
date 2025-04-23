@@ -5,6 +5,8 @@ tags: ['bash', 'linux', 'coding']
 date: 05-26-2024
 ---
 
+## Table of contents
+
 ## Introduction
 
 Nothing better than learning coding by practicing, right? Right??? I sure hope you agree, because that is precisely what we will be doing right now!
