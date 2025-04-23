@@ -3,9 +3,22 @@
 	flex-direction: column;
 }
 
+.page h2::before,
+.page h3::before,
+.page h4::before,
+.page h5::before,
+.page h6::before {
+	background: var(--accent);
+	content: '';
+	height: 0.5svw;
+	width: 0.5svw;
+	margin-right: 0.5svw;
+	display: inline-block;
+}
+
 .title {
 	color: var(--accent);
-	font-size: 2.75rem;
+	font-size: 2.5rem;
 }
 
 .tagContainer {
