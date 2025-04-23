@@ -35,7 +35,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 	const post = getPost(slug);
 	return (
 		<div className={styles.page}>
-			<header>
+			<header className={styles.header}>
 				<h1 className={styles.title}>{post.frontmatter.title}</h1>
 				<time dateTime={post.frontmatter.date}>
 					{new Date(post.frontmatter.date).toLocaleDateString()}

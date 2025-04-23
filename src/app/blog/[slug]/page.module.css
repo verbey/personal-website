@@ -17,12 +17,24 @@
 }
 
 .title {
-	color: var(--accent);
 	font-size: 2.5rem;
 }
 
+.title::before {
+	content: '>';
+	color: var(--accent);
+	display: inline-block;
+}
+
 .tagContainer {
+	color: var(--accent);
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1svw;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: 1svh;
 }
