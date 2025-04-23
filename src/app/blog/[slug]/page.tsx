@@ -47,7 +47,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 				</ul>
 			</header>
 			<main>
-				<article>
+				<article className={styles.post}>
 					<MDXRemote
 						source={post.content}
 						components={mdxComponents}

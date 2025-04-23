@@ -38,3 +38,7 @@
 	flex-direction: column;
 	gap: 1svh;
 }
+
+.post > ul {
+	list-style: '→ ' inside;
+}
