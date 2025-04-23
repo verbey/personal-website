@@ -59,8 +59,7 @@ export default function RootLayout({
 				</nav>
 				<main>{children}</main>
 				<footer className={styles.footer}>
-					Made with coffee and tea and love and Next and many other
-					things
+					2025-present (c) cherkashyn.me
 				</footer>
 			</body>
 		</html>

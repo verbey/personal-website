@@ -34,7 +34,7 @@ body {
 	gap: max(16px, 1svw);
 	list-style: none;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
 }
 
 .navbarLink {
@@ -69,4 +69,6 @@ body {
 
 .footer {
 	line-height: 1.5;
+	border-top: 0.5svh dashed var(--text);
+	padding-top: 1svh;
 }
