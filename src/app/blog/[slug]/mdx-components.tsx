@@ -3,6 +3,8 @@ import Link from 'next/link';
 import styles from './mdx-components.module.css';
 import { Code } from 'bright';
 
+Code.theme = 'github-dark';
+
 export const mdxComponents: MDXComponents = {
 	a: ({ children, ...props }) => {
 		return (
@@ -11,5 +13,13 @@ export const mdxComponents: MDXComponents = {
 			</Link>
 		);
 	},
-	pre: Code,
+	pre: ({ children, ...props }) => {
+		return (
+			<>
+				<Code lineNumbers className={styles.code} {...props}>
+					{children}
+				</Code>
+			</>
+		);
+	},
 };
