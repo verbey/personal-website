@@ -1,6 +1,7 @@
 .page {
 	display: flex;
 	flex-direction: column;
+	gap: 1svh;
 }
 
 .page h2::before,
@@ -37,6 +38,13 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1svh;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	gap: 1svh;
+	line-height: 1.5;
 }
 
 .post > ul {
