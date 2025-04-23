@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styles from './mdx-components.module.css';
 
 export const mdxComponents: MDXComponents = {
-	// Allows customizing built-in components, e.g. to add styling.
 	h1: ({ children }) => (
 		<h1 style={{ color: 'var(--accent)', fontSize: '2.75rem' }}>
 			{children}
