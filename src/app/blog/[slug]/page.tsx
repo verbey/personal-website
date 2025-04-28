@@ -1,33 +1,24 @@
 import styles from './page.module.css';
-import fs from 'fs';
-import graymatter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { mdxComponents } from './mdx-components';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkToc from 'remark-toc';
+import getPosts from '@/app/lib/getPosts';
 
-function getPost(postName: string): {
-	slug: string;
-	frontmatter: {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		[key: string]: any;
-	};
-	content: string;
-} {
-	const markdownWithMeta = fs.readFileSync(
-		`public/posts/${postName}.md`,
-		'utf-8'
-	);
-
-	const { data: frontmatter, content } = graymatter(markdownWithMeta);
-
-	return {
-		slug: postName,
-		frontmatter,
-		content,
-	};
+function getPost(postName: string):
+	| {
+			slug: string;
+			frontmatter: {
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+				[key: string]: any;
+			};
+			content: string;
+	  }
+	| undefined {
+	const posts = getPosts();
+	return posts.find((post) => post.slug === postName);
 }
 
 export default async function Post({
@@ -37,6 +28,7 @@ export default async function Post({
 }) {
 	const { slug } = await params;
 	const post = getPost(slug);
+	if (!post) return <h1>Post not found</h1>;
 	return (
 		<div className={styles.page}>
 			<header className={styles.header}>

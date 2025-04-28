@@ -1,34 +1,7 @@
 import styles from './page.module.css';
 import infoPageStyles from '../page.module.css';
-import fs from 'fs';
-import graymatter from 'gray-matter';
+import getPosts from '@/app/lib/getPosts';
 
-const postsDir = 'public/posts';
-
-function getPosts(): {
-	slug: string;
-	frontmatter: {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		[key: string]: any;
-	};
-	content: string;
-}[] {
-	const files = fs.readdirSync(postsDir);
-	const posts = files.map((file) => {
-		const slug = file.replace('.md', '');
-		const markdownWithMeta = fs.readFileSync(
-			`${postsDir}/${file}`,
-			'utf-8'
-		);
-		const { data: frontmatter, content } = graymatter(markdownWithMeta);
-		return {
-			slug,
-			frontmatter,
-			content,
-		};
-	});
-	return posts;
-}
 export default function Archive() {
 	const posts = getPosts();
 	return (
