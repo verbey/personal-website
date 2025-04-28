@@ -4,7 +4,7 @@ import layoutStyles from './layout.module.css';
 export default function Home() {
 	return (
 		<div className={styles.page}>
-			<h1>Home</h1>
+			<h1 className={styles.title}>Home</h1>
 			<p className={styles.textBlock}>
 				Hi there! I&#39;m Victor Cherkashyn, welcome to my personal
 				website!

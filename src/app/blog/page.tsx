@@ -15,7 +15,7 @@ export default function Archive() {
 	return (
 		<div className={infoPageStyles.page}>
 			<header>
-				<h1>Blog Posts</h1>
+				<h1 className={infoPageStyles.title}>Blog Posts</h1>
 			</header>
 			<main>
 				{posts.map((post) => (

@@ -7,3 +7,12 @@
 .textBlock {
 	line-height: 1.5;
 }
+
+.title::before {
+	background: var(--accent);
+	content: '';
+	height: 0.5svw;
+	width: 0.5svw;
+	margin-right: 0.5svw;
+	display: inline-block;
+}
