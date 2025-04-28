@@ -7,6 +7,16 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkToc from 'remark-toc';
 import getPosts from '@/app/lib/getPosts';
 
+export async function generateStaticParams() {
+	const posts = getPosts();
+
+	return posts.map((post) => ({
+		slug: post.slug,
+		frontmatter: post.frontmatter,
+		content: post.content,
+	}));
+}
+
 function getPost(postName: string):
 	| {
 			slug: string;

@@ -2,6 +2,14 @@ import styles from './page.module.css';
 import infoPageStyles from '../page.module.css';
 import getPosts from '@/app/lib/getPosts';
 
+export async function generateStaticParams() {
+	const posts = getPosts();
+
+	return posts.map((post) => ({
+		slug: post.slug,
+	}));
+}
+
 export default function Archive() {
 	const posts = getPosts();
 	return (

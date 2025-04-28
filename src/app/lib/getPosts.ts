@@ -1,34 +1,25 @@
 import fs from 'fs';
-import graymatter from 'gray-matter';
-import { cache } from 'react';
+import path from 'path';
+import matter from 'gray-matter'; // I assume you use gray-matter
 
-const postsDir = 'src/app/posts';
+const postsDir = path.join(process.cwd(), 'src/app/posts');
 
-export const getPosts = cache(
-	(): {
-		slug: string;
-		frontmatter: {
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			[key: string]: any;
+export default function getAllPosts() {
+	const files = fs.readdirSync(postsDir);
+
+	const posts = files.map((filename) => {
+		const filePath = path.join(postsDir, filename);
+		const markdown = fs.readFileSync(filePath, 'utf-8');
+		const { data: frontmatter, content } = matter(markdown);
+
+		const slug = filename.replace(/\.md$/, '');
+
+		return {
+			slug,
+			frontmatter,
+			content,
 		};
-		content: string;
-	}[] => {
-		const files = fs.readdirSync(postsDir);
-		const posts = files.map((file) => {
-			const slug = file.replace('.md', '');
-			const markdownWithMeta = fs.readFileSync(
-				`${postsDir}/${file}`,
-				'utf-8'
-			);
-			const { data: frontmatter, content } = graymatter(markdownWithMeta);
-			return {
-				slug,
-				frontmatter,
-				content,
-			};
-		});
-		return posts;
-	}
-);
+	});
 
-export default getPosts;
+	return posts;
+}
