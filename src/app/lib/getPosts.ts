@@ -2,7 +2,7 @@ import fs from 'fs';
 import graymatter from 'gray-matter';
 import { cache } from 'react';
 
-const postsDir = 'public/posts';
+const postsDir = './public/posts';
 
 export const getPosts = cache(
 	(): {
