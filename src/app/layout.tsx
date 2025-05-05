@@ -60,7 +60,8 @@ export default function RootLayout({
 				</nav>
 				<main>{children}</main>
 				<footer className={styles.footer}>
-					2025-present (c) cherkashyn.me
+					Hand coded by me with love, Next.js and React. Type safety
+					ensured by Typescript :)
 				</footer>
 			</body>
 		</html>
