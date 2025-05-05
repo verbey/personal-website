@@ -11,9 +11,9 @@
 .page h6::before {
 	background: var(--accent);
 	content: '';
-	height: 0.5svw;
-	width: 0.5svw;
-	margin-right: 0.5svw;
+	height: 0.75rem;
+	width: 0.75rem;
+	margin-right: 0.75rem;
 	display: inline-block;
 }
 
