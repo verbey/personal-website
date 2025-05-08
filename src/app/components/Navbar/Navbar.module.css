@@ -1,0 +1,41 @@
+.navbarElementsContainer {
+	display: flex;
+	gap: max(16px, 1svw);
+	list-style: none;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.navbarLink {
+	/* I set it as bg color because on the light theme dark text is unreadable */
+	color: var(--text);
+	text-decoration: none;
+	padding: 4px 8px;
+	border-left: 0.2rem solid var(--accent);
+	font-family: var(--font-departure-mono);
+	background: linear-gradient(to left, var(--buttons) 50%, var(--accent) 50%);
+	background-size: 300%;
+	background-repeat: no-repeat;
+	background-position: right;
+	transition: 0.5s ease-out;
+}
+
+.navbarLink:hover {
+	background-position: left;
+	color: var(--bg);
+}
+
+.activeTab {
+	background: var(--accent);
+	color: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+	.navbarLink:hover {
+		color: var(--text);
+	}
+
+	.activeTab {
+		color: var(--text);
+	}
+}
