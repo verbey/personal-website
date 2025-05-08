@@ -12,6 +12,7 @@
 	text-decoration: none;
 	border-left: 0.5svw solid var(--accent);
 	padding: 4px 8px;
+	font-family: var(--font-departure-mono);
 }
 
 .navbarLink:hover {

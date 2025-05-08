@@ -8,11 +8,15 @@
 	line-height: 1.5;
 }
 
+.title {
+	font-family: var(--font-departure-mono);
+}
+
 .title::before {
 	background: var(--accent);
 	content: '';
 	height: 0.75rem;
 	width: 0.75rem;
-	margin-right: 0.75rem;
+	margin-right: 0.25rem;
 	display: inline-block;
 }

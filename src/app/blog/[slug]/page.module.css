@@ -40,6 +40,10 @@
 	gap: 1svh;
 }
 
+.header > *:not(time) {
+	font-family: var(--font-departure-mono);
+}
+
 .post {
 	display: flex;
 	flex-direction: column;

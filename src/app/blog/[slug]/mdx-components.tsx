@@ -22,4 +22,35 @@ export const mdxComponents: MDXComponents = {
 			</>
 		);
 	},
+
+	h1: ({ children, ...props }) => (
+		<h1 className={styles.header} {...props}>
+			{children}
+		</h1>
+	),
+	h2: ({ children, ...props }) => (
+		<h2 className={styles.header} {...props}>
+			{children}
+		</h2>
+	),
+	h3: ({ children, ...props }) => (
+		<h3 className={styles.header} {...props}>
+			{children}
+		</h3>
+	),
+	h4: ({ children, ...props }) => (
+		<h4 className={styles.header} {...props}>
+			{children}
+		</h4>
+	),
+	h5: ({ children, ...props }) => (
+		<h5 className={styles.header} {...props}>
+			{children}
+		</h5>
+	),
+	h6: ({ children, ...props }) => (
+		<h6 className={styles.header} {...props}>
+			{children}
+		</h6>
+	),
 };

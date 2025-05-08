@@ -2,6 +2,10 @@
 	color: var(--accent);
 }
 
+.header {
+	font-family: var(--font-departure-mono);
+}
+
 @media screen and (max-width: 400px) {
 	.link {
 		word-break: break-all;

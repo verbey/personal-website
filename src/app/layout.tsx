@@ -14,6 +14,7 @@ const departureMono = localFont({
 		},
 	],
 	fallback: ['monospace', 'system-ui'],
+	variable: '--font-departure-mono',
 });
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en' className={departureMono.className}>
+		<html lang='en' className={departureMono.variable}>
 			<body>
 				<nav className={styles.navbar}>
 					<ul className={styles.navbarElementsContainer}>

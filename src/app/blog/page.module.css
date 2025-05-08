@@ -10,6 +10,7 @@
 
 .post > h2 {
 	color: var(--accent);
+	font-family: var(--font-departure-mono);
 }
 
 .link {
@@ -22,6 +23,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1svw;
+	align-items: flex-end;
+	font-family: var(--font-departure-mono);
 }
 
 .metadataContainer {
