@@ -1,6 +1,8 @@
 import styles from './page.module.css';
 import layoutStyles from './layout.module.css';
 
+import Picture from './components/Picture/Picture';
+
 export default function Home() {
 	return (
 		<div className={styles.page}>
@@ -24,6 +26,10 @@ export default function Home() {
 				</a>
 				. feel free to drop by and tell me you&#39;ve been here.
 			</p>
+			<Picture
+				fileName='crosses'
+				alt='A pattern consisting of black and white crosses. One of them is red.'
+			/>
 		</div>
 	);
 }
