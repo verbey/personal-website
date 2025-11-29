@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter'; // I assume you use gray-matter
+import matter from 'gray-matter';
 
 const postsDir = path.join(process.cwd(), 'src/app/posts');
 
