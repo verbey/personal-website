@@ -1,33 +1,97 @@
+.navbar {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
 .navbarElementsContainer {
 	display: flex;
-	gap: max(16px, 1svw);
 	list-style: none;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: space-between;
+	gap: 2px;
+	background: var(--bg-shade);
+	border: solid 2px var(--bg-shade);
+}
+
+.navbarElementsContainer>* {
+	flex: 1;
+}
+
+.navbarElementsContainer>*:nth-child(3),
+.navbarElementsContainer>*:nth-child(4) {
+	flex: 2;
+}
+
+
+@keyframes pulse {
+	50% {
+		background-color: rgba(var(--accent), 0.75);
+	}
 }
 
 .navbarLink {
-	/* I set it as bg color because on the light theme dark text is unreadable */
 	color: var(--text);
 	text-decoration: none;
 	padding: 4px 8px;
-	border-left: 0.2rem solid var(--accent);
 	font-family: var(--font-departure-mono);
-	background: linear-gradient(to left, var(--buttons) 50%, var(--accent) 50%);
-	background-size: 300%;
-	background-repeat: no-repeat;
-	background-position: right;
-	transition: 0.5s ease-out;
+	width: 100%;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: relative;
+	z-index: 0;
+	background-color: var(--bg);
+	height: 100%;
+	transition-duration: 0.5s;
+	transition-property: color, background-color;
 }
 
-.navbarLink:hover {
-	background-position: left;
-	color: var(--bg);
+.navbarLink:hover,
+.navbarLink:focus,
+.navbarLink:active {
+	animation-name: pulse;
+	animation-duration: 0.8s;
+	animation-delay: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	background-color: var(--accent);
+	color: var(--text);
+}
+
+@media screen and (max-width: 540px) {
+	.navbarLink {
+		font-size: 0.8rem;
+	}
 }
 
 .activeTab {
-	background: var(--accent);
-	color: var(--bg);
+	border-bottom: 2px solid var(--accent);
+	color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+	.navbarLink:hover {
+		color: var(--text);
+	}
+
+	.activeTab {
+		color: var(--text);
+	}
+}
+
+
+
+@media screen and (max-width: 540px) {
+	.navbarLink {
+		font-size: 0.8rem;
+	}
+}
+
+.activeTab {
+	border-bottom: 2px solid var(--accent);
+	color: var(--text);
 }
 
 @media (prefers-color-scheme: dark) {
