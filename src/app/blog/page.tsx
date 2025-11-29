@@ -1,6 +1,6 @@
 import styles from './page.module.css';
 import infoPageStyles from '../page.module.css';
-import getPosts from '@/app/lib/getPosts';
+import getPosts from '@/lib/getPosts';
 
 export async function generateStaticParams() {
 	const posts = getPosts();

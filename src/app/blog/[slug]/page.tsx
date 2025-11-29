@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkToc from 'remark-toc';
-import getPosts from '@/app/lib/getPosts';
+import getPosts from '@/lib/getPosts';
 
 export async function generateStaticParams() {
 	const posts = getPosts();
@@ -19,13 +19,13 @@ export async function generateStaticParams() {
 
 function getPost(postName: string):
 	| {
-			slug: string;
-			frontmatter: {
-				// eslint-disable-next-line @typescript-eslint/no-explicit-any
-				[key: string]: any;
-			};
-			content: string;
-	  }
+		slug: string;
+		frontmatter: {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			[key: string]: any;
+		};
+		content: string;
+	}
 	| undefined {
 	const posts = getPosts();
 	return posts.find((post) => post.slug === postName);

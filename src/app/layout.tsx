@@ -9,7 +9,7 @@ import Navbar from './components/Navbar/Navbar';
 const departureMono = localFont({
 	src: [
 		{
-			path: './fonts/DepartureMono-Regular.woff2',
+			path: '../fonts/DepartureMono-Regular.woff2',
 			weight: '400',
 			style: 'normal',
 		},
