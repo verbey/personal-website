@@ -3,12 +3,6 @@
 	text-decoration: underline;
 }
 
-@media screen and (max-width: 400px) {
-	.link {
-		word-break: break-all;
-	}
-}
-
 .footer {
 	margin-top: 1rem;
 	line-height: 1.5;
