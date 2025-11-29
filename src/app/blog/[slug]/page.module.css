@@ -18,7 +18,7 @@
 }
 
 .title {
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 .title::before {
@@ -40,7 +40,7 @@
 	gap: 1svh;
 }
 
-.header > *:not(time) {
+.header>*:not(time) {
 	font-family: var(--font-departure-mono);
 }
 
@@ -51,6 +51,6 @@
 	line-height: 1.5;
 }
 
-.post > ul {
+.post>ul {
 	list-style: '→ ' inside;
 }
