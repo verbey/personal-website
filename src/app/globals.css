@@ -32,6 +32,12 @@ html {
 	}
 }
 
+@media screen and (max-width: 360px) {
+	html {
+		padding: 4px 2svw;
+	}
+}
+
 body {
 	display: flex;
 	flex-direction: column;
