@@ -1,13 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 
 import styles from './Navbar.module.css';
 
+import useNavbar from './useNavbar';
+
 export default function Navbar() {
-	// I don't set default activeTab state so the home tab won't be active forever for users with JS disabled
-	const [activeTab, setActiveTab] = useState('');
+	const { activeTab, setActiveTab } = useNavbar();
 
 	return (
 		<nav className={styles.navbar}>
