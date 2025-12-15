@@ -4,7 +4,7 @@ import './reset.css';
 import './globals.css';
 import localFont from 'next/font/local';
 
-import Navbar from './components/Navbar/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 
 const departureMono = localFont({
 	src: [

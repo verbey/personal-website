@@ -15,7 +15,7 @@ function useNavbar() {
         else setActiveTab('');
     }, [pathname]);
 
-    return { activeTab, setActiveTab };
+    return { activeTab };
 }
 
 export default useNavbar;

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from 'next/link';
 
@@ -7,7 +7,8 @@ import styles from './Navbar.module.css';
 import useNavbar from './useNavbar';
 
 export default function Navbar() {
-	const { activeTab, setActiveTab } = useNavbar();
+	const navbarState = useNavbar();
+	const activeTab = navbarState?.activeTab ?? '';
 
 	return (
 		<nav className={styles.navbar}>
@@ -20,7 +21,6 @@ export default function Navbar() {
 								? styles.navbarLink + ' ' + styles.activeTab
 								: styles.navbarLink
 						}
-						onClick={() => setActiveTab('home')}
 					>
 						Home
 					</Link>
@@ -33,7 +33,6 @@ export default function Navbar() {
 								? styles.navbarLink + ' ' + styles.activeTab
 								: styles.navbarLink
 						}
-						onClick={() => setActiveTab('blog')}
 					>
 						Blog
 					</Link>
@@ -55,7 +54,6 @@ export default function Navbar() {
 								? styles.activeTab + ' ' + styles.navbarLink
 								: styles.navbarLink
 						}
-						onClick={() => setActiveTab('about')}
 					>
 						About me
 					</Link>

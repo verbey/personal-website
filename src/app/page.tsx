@@ -1,7 +1,7 @@
 import styles from './page.module.css';
 import layoutStyles from './layout.module.css';
 
-import Picture from './components/Picture/Picture';
+import Picture from '@/components/ui/Picture/Picture';
 
 export default function Home() {
 	return (
