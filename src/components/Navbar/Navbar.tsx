@@ -11,54 +11,57 @@ export default function Navbar() {
 	const activeTab = navbarState?.activeTab ?? '';
 
 	return (
-		<nav className={styles.navbar}>
-			<ul className={styles.navbarElementsContainer}>
-				<li>
-					<Link
-						href='/'
-						className={
-							activeTab === 'home'
-								? styles.navbarLink + ' ' + styles.activeTab
-								: styles.navbarLink
-						}
-					>
-						Home
-					</Link>
-				</li>
-				<li>
-					<Link
-						href='/blog'
-						className={
-							activeTab === 'blog'
-								? styles.navbarLink + ' ' + styles.activeTab
-								: styles.navbarLink
-						}
-					>
-						Blog
-					</Link>
-				</li>
-				<li>
-					<a
-						className={styles.navbarLink}
-						href='https://github.com/verbey?tab=repositories'
-						target='_blank'
-					>
-						Projects
-					</a>
-				</li>
-				<li>
-					<Link
-						href='/about'
-						className={
-							activeTab === 'about'
-								? styles.activeTab + ' ' + styles.navbarLink
-								: styles.navbarLink
-						}
-					>
-						About me
-					</Link>
-				</li>
-			</ul>
-		</nav>
+		<>
+			─=≡Σ((( つ•̀ω•́)つ
+			<nav className={styles.navbar}>
+				<ul className={styles.navbarElementsContainer}>
+					<li>
+						<Link
+							href='/'
+							className={
+								activeTab === 'home'
+									? styles.navbarLink + ' ' + styles.activeTab
+									: styles.navbarLink
+							}
+						>
+							Home
+						</Link>
+					</li>
+					<li>
+						<Link
+							href='/blog'
+							className={
+								activeTab === 'blog'
+									? styles.navbarLink + ' ' + styles.activeTab
+									: styles.navbarLink
+							}
+						>
+							Blog
+						</Link>
+					</li>
+					<li>
+						<a
+							className={styles.navbarLink}
+							href='https://github.com/verbey?tab=repositories'
+							target='_blank'
+						>
+							Projects
+						</a>
+					</li>
+					<li>
+						<Link
+							href='/about'
+							className={
+								activeTab === 'about'
+									? styles.activeTab + ' ' + styles.navbarLink
+									: styles.navbarLink
+							}
+						>
+							About me
+						</Link>
+					</li>
+				</ul>
+			</nav>
+		</>
 	);
 }
