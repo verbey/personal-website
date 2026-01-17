@@ -20,3 +20,8 @@
 	margin-right: 0.25rem;
 	display: inline-block;
 }
+
+.link,
+.link:visited {
+	color: var(--accent);
+}
