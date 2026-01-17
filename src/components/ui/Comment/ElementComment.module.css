@@ -1,0 +1,12 @@
+.comment {
+	font-size: 0.9rem;
+	color: var(--muted);
+	text-align: center;
+}
+
+.commentContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1rem 0;
+}
