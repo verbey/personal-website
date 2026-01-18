@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.footerBorder {
+    border-top: 1px solid var(--bg-shade);
+    width: 75%;
+	margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.footerTextBlock {
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footerLinkContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}

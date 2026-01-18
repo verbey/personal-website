@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import styles from './layout.module.css';
 import './reset.css';
 import './globals.css';
 import localFont from 'next/font/local';
 
 import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
 
 const departureMono = localFont({
 	src: [
@@ -34,10 +34,7 @@ export default function RootLayout({
 			<body>
 				<Navbar />
 				<main>{children}</main>
-				<footer className={styles.footer}>
-					Hand coded by me with love, Next.js and React. Type safety
-					ensured by Typescript :)
-				</footer>
+				<Footer />
 			</body>
 		</html>
 	);

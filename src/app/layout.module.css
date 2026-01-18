@@ -2,11 +2,3 @@
 	color: var(--accent);
 	text-decoration: underline;
 }
-
-.footer {
-	margin-top: 1rem;
-	line-height: 1.5;
-	font-size: 0.8rem;
-	border-top: 1px solid var(--bg-shade);
-	padding-top: 1svh;
-}

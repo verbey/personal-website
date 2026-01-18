@@ -1,6 +1,6 @@
 import styles from '../page.module.css';
 import Image from 'next/image';
-import ElementComment from '../../components/ui/Comment/ElementComment';
+import ElementComment from '../../components/ui/ElementComment/ElementComment';
 import anya from '../../../public/anya/anya.webp';
 
 export default function About() {

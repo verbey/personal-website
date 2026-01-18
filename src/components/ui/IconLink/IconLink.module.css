@@ -1,0 +1,19 @@
+.link {
+  color: var(--accent);
+}
+
+.link:visited {
+  color: var(--accent);
+}
+
+.icon {
+  display: inline-block;
+  line-height: 0;
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
