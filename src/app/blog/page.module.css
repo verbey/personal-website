@@ -1,7 +1,23 @@
 .post {
+	position: relative;
 	padding: 1svh 1svw;
 	border-left: 1svw solid var(--accent);
 }
+
+.post::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -0.6svw; 
+	width: 0.6svw;
+	height: 100%;
+	box-shadow:
+		-0.4svw 0 0.6svw var(--accent),
+		-0.8svw 0 1.2svw var(--accent),
+		-1.2svw 0 2svw var(--accent);
+}
+
+
 
 .post > h2 {
 	color: var(--accent);
