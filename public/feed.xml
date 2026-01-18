@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Victor Cherkashyn]]></title>
+        <description><![CDATA[Victor Cherkashyn's blog]]></description>
+        <link>https://cherkashyn.me</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sun, 18 Jan 2026 19:06:36 GMT</lastBuildDate>
+        <atom:link href="https://cherkashyn.me/feed.xml" rel="self" type="application/rss+xml"/>
+        <language><![CDATA[en]]></language>
+        <item>
+            <title><![CDATA[Coding a simple Bash Image Optimiser!]]></title>
+            <description><![CDATA[<h2>Table of contents</h2>
+<h2>Introduction</h2>
+<p>Nothing better than learning coding by practicing, right? Right??? I sure hope you agree, because that is precisely what we will be doing right now!</p>
+<p>Bash is truly a blessing because you can start building amazing things using many kinds of libraries and CLI tools right away.</p>
+<p>For today, let&#39;s try building the base for a picture optimi<strong>z</strong>er (I&#39;m really torn how I should refer to the thing in the text, because I prefer the Bri&#39;ish spelling but want to keep everything programming-related with the American spelling).</p>
+<h2>Preparations</h2>
+<ul>
+<li>Install bash on your system if, for some reason, it is not installed yet.</li>
+<li>Install <a href="https://linux.die.net/man/1/optipng" target="_blank" rel="noopener noreferrer"><code>optipng</code></a>.</li>
+<li>Install <a href="https://github.com/inotify-tools/inotify-tools" target="_blank" rel="noopener noreferrer"><code>inotify-tools</code></a>.</li>
+<li>Get a grasp on the most basic bash syntax. Nothing too serious. Maybe skim through a few chapters of <a href="https://tldp.org/LDP/abs/html/index.html" target="_blank" rel="noopener noreferrer">this</a> or watch a few YouTube videos. It doesn&#39;t matter.</li>
+<li>Learn how to exit vim or get your text editor of choice ready by creating and opening a file named <code>imgoptimizer.sh</code></li>
+</ul>
+<h2>Getting started</h2>
+<p>We will start with the usual, let&#39;s add a shebang to our script:</p>
+<pre><code class="language-bash">#!/bin/bash
+</code></pre>
+<p>Now, I&#39;d like us to follow at least <a href="https://github.com/progrium/bashstyle" target="_blank" rel="noopener noreferrer">some of the self-proclaimed best practices</a>. That&#39;s why the <em>main</em> code will go in the... bingo! <code>main</code> function:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+main() {
+	set -eo pipefail
+}
+
+main &quot;$@&quot; # here we call our function with the special parameter - $@ contains all parameters that were passed to the script
+</code></pre>
+<p>Note the <code>set -eo pipefail</code>. This thing makes the script failfast and makes the shell <a href="https://unix.stackexchange.com/questions/597500/what-is-the-meaning-of-set-e-o-pipefail" target="_blank" rel="noopener noreferrer">punish us</a> if the script is poorly-written. Teehee~</p>
+<p>Obviously, our script has to know what directory to monitor. Let&#39;s declare a variable called <code>DIRECTORY</code> (you can put any other value, really):</p>
+<pre><code class="language-bash">#!/bin/bash
+
+main() {
+	set -eo pipefail
+
+	readonly DIRECTORY=$HOME/Pictures # readonly specifies a constant variable
+}
+
+main &quot;$@&quot;
+</code></pre>
+<h2>The neat part</h2>
+<p>Now, let&#39;s setup the part where we launch the watches for new files in our directory:</p>
+<pre><code class="language-bash">inotifywait --monitor --recursive --event create --format &quot;%w%f&quot; &quot;$DIRECTORY&quot; |
+        while read filename; do
+                optipng -o4 &quot;$filename&quot;
+            fi
+        done
+</code></pre>
+<p>Here&#39;s the <a href="https://linux.die.net/man/1/inotifywait" target="_blank" rel="noopener noreferrer">inotifywait docs</a> to help explain how the command works. Most of the used options are self-explanatory (since I used the full versions), I&#39;ll only explain <code>--format</code>. <code>optipng</code> needs to know which file it should optimize. That&#39;s why we <a href="https://linuxhint.com/bash_pipe_tutorial/" target="_blank" rel="noopener noreferrer">pipe the output</a> of the <code>inotifywait</code> command to the while loop that reads the said output and uses <code>optipng</code> on it: <code>--format &quot;%w%f&quot;</code> outputs the absolute path to the newly created file.</p>
+<pre><code class="language-bash">optipng -o4 &quot;$filename&quot;
+</code></pre>
+<p>Runs the <code>optipng</code> program on the file with the optimization level (the <code>-o</code> flag) of 4. Choosing the right level is a <a href="https://plato.stanford.edu/entries/hegel-dialectics/#HegeDescHisDialMeth" target="_blank" rel="noopener noreferrer">dialectical process</a> which is driven by the contradiction of optimization quality vs the time it takes to run the whole thing. See for yourself what&#39;s best for your machine. In my case, I settle for the level 4 as the most optimal (pun intended) one.</p>
+<p>Here&#39;s how the thing should look so far:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+main() {
+	set -eo pipefail
+
+	readonly DIRECTORY=$HOME/Pictures
+
+	inotifywait --monitor --recursive --event create --format &quot;%w%f&quot; &quot;$DIRECTORY&quot; |
+        while read filename; do
+                optipng -o4 &quot;$filename&quot;
+        done
+}
+
+main &quot;$@&quot;
+</code></pre>
+<p>Let&#39;s try running it with</p>
+<pre><code class="language-bash">bash imgoptimize.sh
+</code></pre>
+<p>Try to create a new <code>.png</code> file in the directory, for example, by creating a screenshot that would be saved there.</p>
+<p>Wait, oh nyo! Sometimes it errors out, because <code>inotifywait</code> passes the filename <em>before</em> the file is actually fully created!</p>
+<p>Let&#39;s add a <code>sleep</code> command with <code>3s</code> as its argument. This time should be just enough to wait until the file is fully written to the disk.</p>
+<p>We might as well wrap up the loop in an if statement checking if the file is a PNG one, just in case:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+main() {
+	set -eo pipefail
+
+	readonly DIRECTORY=$HOME/Pictures
+
+	inotifywait --monitor --recursive --event create --format &quot;%w%f&quot; &quot;$DIRECTORY&quot; |
+        while read filename; do
+            if [[ &quot;$filename&quot; == *.png ]]; then
+                sleep 3s
+                optipng -o4 &quot;$filename&quot;
+            fi
+        done
+}
+
+main &quot;$@&quot;
+</code></pre>
+<p>Great, now let&#39;s try running the thing again... It works! <em>But</em> since <code>optipng</code> overrides the file, it triggers the <code>inotify</code> watches again on the technically same file. Luckily, <code>optipng</code> won&#39;t try to optimize an already optimized file but it would still be nicer and faster for the script if we didn&#39;t bother with such files at all!</p>
+<p>The most obvious solution is to add a variable that will store the last filename. Thus, the script should look something like this:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+main() {
+	set -eo pipefail
+
+	readonly DIRECTORY=$HOME/Pictures
+
+	last_filename=&quot;&quot;
+
+    inotifywait --monitor --recursive --event create --format &quot;%w%f&quot; &quot;$DIRECTORY&quot; |
+        while read filename; do
+            if [[ &quot;$filename&quot; == *.png ]] &amp;&amp; [[ &quot;$filename&quot; != &quot;$last_filename&quot; ]]; then
+                last_filename=&quot;$filename&quot;
+                sleep 3s
+                optipng -o4 &quot;$filename&quot;
+            fi
+        done
+}
+
+main &quot;$@&quot;
+</code></pre>
+<h2>Final touches</h2>
+<p>We have a quite useful script now, but we can make it a little bit better if we move the config to a separate file.</p>
+<p>In your terminal, create a directory and a file for the rc of our script. For example, like this:</p>
+<pre><code class="language-bash">mkdir ~/.config/imgoptimize &amp;&amp; touch ~/.config/imgoptimize/imgoptimizerc
+</code></pre>
+<p>In that file, let&#39;s specify the directory we want our script to monitor:</p>
+<pre><code class="language-bash">DIRECTORY=/home/user/Pictures
+</code></pre>
+<p>We should now rewrite our script to use the config file:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+main() {
+    set -eo pipefail
+
+    readonly CONFIG_FILE=&quot;$HOME/.config/imgoptimize/imgoptimizerc&quot;
+	readonly DIRECTORY=&quot;$(cat &quot;$CONFIG_FILE&quot; | grep --regexp ^DIRECTORY | cut --delimiter &quot;=&quot; --fields 2)&quot;
+
+    last_filename=&quot;&quot;
+
+    inotifywait --monitor --recursive --event create --format &quot;%w%f&quot; &quot;$DIRECTORY&quot; |
+        while read filename; do
+            if [[ &quot;$filename&quot; == *.png ]] &amp;&amp; [[ &quot;$filename&quot; != &quot;$last_filename&quot; ]]; then
+                last_filename=&quot;$filename&quot;
+                sleep 3s
+                optipng -o4 &quot;$filename&quot;
+            fi
+        done
+}
+
+main &quot;$@&quot;
+</code></pre>
+<p>Check the DIRECTORY variable out:</p>
+<p><code>$()</code> is the syntax for executing shell commands in a subshell (command substitution). In there, I first use the <code>cat</code> command to output the contents of a file, then pipe the output to <code>grep</code> command that uses a regular expression to find the line containing the constant <code>DIRECTORY</code>. What&#39;s left now is to extract the actual path, which I do using the <code>cut</code> command: <code>--delimiter</code> option specifies the character where the string will be split, and the <code>--fields</code> specifies what part of the split string the command should return.</p>
+<p>Note that we could just do</p>
+<pre><code class="language-bash">source $HOME/.config/imgoptimize/imgoptimizerc
+</code></pre>
+<p>which will execute the file as shell code, and so simply declare the <code>DIRECTORY</code> variable, but that also means <em>all</em> code from the file will be executed, which may even lead to <a href="https://unix.stackexchange.com/questions/175648/use-config-file-for-my-shell-script" target="_blank" rel="noopener noreferrer">a hole in security</a>. It&#39;s <em>unlikely</em> that something like that will happen to you with such a script, though.</p>
+<p>Annnnd let&#39;s add some check whether the config file and the directory were found, using <a href="https://tldp.org/LDP/abs/html/tests.html" target="_blank" rel="noopener noreferrer">standart test flags</a>:</p>
+<pre><code class="language-bash">	#!/bin/bash
+
+main() {
+    set -eo pipefail
+
+    readonly CONFIG_FILE=&quot;$HOME/.config/imgoptimize/imgoptimizerc&quot;
+    if [[ -f &quot;$CONFIG_FILE&quot; ]]; then
+        readonly DIRECTORY=&quot;$(cat &quot;$CONFIG_FILE&quot; | grep --regexp ^DIRECTORY | cut --delimiter &quot;=&quot; --fields 2)&quot;
+    else
+        echo &quot;Config file $CONFIG_FILE not found. Exiting.&quot;
+        exit 1
+    fi
+
+    if [[ ! -d $DIRECTORY ]]; then
+        echo &quot;Invalid DIRECTORY specified in config file. Exiting.&quot;
+        exit 1
+    fi
+
+    last_filename=&quot;&quot;
+
+    inotifywait --monitor --recursive --event create --format &quot;%w%f&quot; &quot;$DIRECTORY&quot; |
+        while read filename; do
+            if [[ &quot;$filename&quot; == *.png ]] &amp;&amp; [[ &quot;$filename&quot; != &quot;$last_filename&quot; ]]; then
+                last_filename=&quot;$filename&quot;
+                sleep 3s
+                optipng -o4 &quot;$filename&quot;
+            fi
+        done
+}
+
+main &quot;$@&quot;
+</code></pre>
+<p>This is it! We did it! Hooray!</p>
+<h2>What to do next</h2>
+<p>You didn&#39;t think the whole Code Along would be just me holding your hand and walking you through the whole thing, did you? Try extending the script in some ways to solidify what you might&#39;ve learned today. For example, you can:</p>
+<ul>
+<li>Add more config options! Optimization levels for <code>optipng</code>, <code>sleep</code> time, etc.</li>
+<li>Make the script &quot;optimize&quot; (compress) other image formats, such as <code>jpg</code>. <a href="https://imagemagick.org/" target="_blank" rel="noopener noreferrer"><code>imagemagick</code></a> can <a href="https://stackoverflow.com/questions/7261855/recommendation-for-compressing-jpg-files-with-imagemagick" target="_blank" rel="noopener noreferrer">help you</a> with that task.</li>
+<li>Research how to make the script automatically execute on system start.- See what other things you can do with the images, such as adjusting the resolution to match your monitor. Why have a 2500x2500 image on your computer if your display&#39;s resolution is only 1920x1080?</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Studying programming by building things is great, and it&#39;s even better when you have an idea of what you can do. That&#39;s why I wanted to start the Code Along series. Procrastination is a common issue in self-study, so I genuinely hope that these series will help someone ignite their enthusiasm and learn more quickly and easily.</p>
+<p>ヾ(*▼・▼)ﾉ ⌒☆</p>
+]]></description>
+            <link>https://cherkashyn.me/blog/undefined</link>
+            <guid isPermaLink="false">https://cherkashyn.me/blog/undefined</guid>
+            <dc:creator><![CDATA[Victor Cherkashyn]]></dc:creator>
+            <pubDate>Sun, 26 May 2024 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
