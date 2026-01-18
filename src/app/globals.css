@@ -1,26 +1,29 @@
-:root {
-	--text: rgb(30, 35, 38, 1);
-	--accent: rgb(228, 7, 21);
-	--buttons: rgb(219, 217, 208);
-	--bg: rgb(242, 239, 230);
-	--bg-shade: rgb(166, 164, 157);
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #1d2225;
+	--text-muted: #4b5861;
+    --background: #f0f2f4;
+    --primary: #71838e;
+    --secondary: #b8b8c7;
+    --accent: #e40716;
+  }
 }
-
 @media (prefers-color-scheme: dark) {
-	:root {
-		--text: rgb(241, 244, 246, 1);
-		--accent: rgb(227, 27, 40);
-		--buttons: rgb(53, 51, 57, 1);
-		--bg: rgb(23, 27, 29);
-		--bg-shade: rgb(59, 67, 71);
-	}
+  :root {
+    --text: #dadfe2;
+	--text-muted: #a2a6a9;
+    --background: #181a1c;
+    --primary: #71838e;
+    --secondary: #383847;
+    --accent: #f81b2a;
+  }
 }
 
 html {
 	min-height: 100svh;
 	box-sizing: border-box;
 	color: var(--text);
-	background-color: var(--bg);
+	background-color: var(--background);
 	font-family: system-ui, sans-serif;
 	padding: 0;
 }

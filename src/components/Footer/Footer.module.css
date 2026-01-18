@@ -6,14 +6,13 @@
 }
 
 .footerBorder {
-    border-top: 1px solid var(--bg-shade);
+    border-top: 1px solid var(--primary);
     width: 75%;
 	margin: 0 auto;
-    margin-bottom: 1rem;
 }
 
 .footerTextBlock {
-    color: var(--muted);
+    color: var(--text-muted);
     font-size: 0.9rem;
     text-align: center;
 }

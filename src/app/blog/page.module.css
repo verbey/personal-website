@@ -1,11 +1,6 @@
 .post {
-	background: var(--buttons);
 	padding: 1svh 1svw;
 	border-left: 1svw solid var(--accent);
-}
-
-.post:hover {
-	background: 0;
 }
 
 .post > h2 {
