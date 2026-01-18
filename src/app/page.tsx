@@ -1,5 +1,4 @@
 import styles from './page.module.css';
-import layoutStyles from './layout.module.css';
 import Link from 'next/link';
 
 export default function Home() {
@@ -20,7 +19,7 @@ export default function Home() {
 				This domain is home to my email adress —{' '}
 				<a
 					href='mailto:victor@cherkashyn.me'
-					className={layoutStyles.link}
+					className={styles.link}
 				>
 					victor@cherkashyn.me
 				</a>

@@ -1,4 +1,39 @@
-.link {
-	color: var(--accent);
-	text-decoration: underline;
+.pageLayout {
+	display: flex;
+	flex-direction: column;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 1svh 1svw;
+	min-height: 100svh;
+	gap: 1rem;
+}
+
+.mainContent {
+	padding: 0 16svw;
+	flex: 1;
+	min-height: 0;
+}
+
+@media (max-width: 1600px) {
+	.mainContent {
+		padding: 0 10svw;
+	}
+}
+
+@media (max-width: 1200px) {
+	.mainContent {
+		padding: 0 8svw;
+	}
+}
+
+@media (max-width: 800px) {
+	.mainContent {
+		padding: 0 4svw;
+	}
+}
+
+@media (max-width: 400px) {
+	.mainContent {
+		padding: 0 1svw;
+	}
 }

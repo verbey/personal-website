@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './reset.css';
 import './globals.css';
 import localFont from 'next/font/local';
+import styles from './layout.module.css';
 
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -31,9 +32,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' className={departureMono.variable}>
-			<body>
+			<body className={styles.pageLayout}>
 				<Navbar />
-				<main>{children}</main>
+				<main className={styles.mainContent}>{children}</main>
 				<Footer />
 			</body>
 		</html>
