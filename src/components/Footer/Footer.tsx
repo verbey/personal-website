@@ -13,6 +13,7 @@ function Footer() {
                 <IconLink iconSrc="streamline-pixel-pet-animals-cat.svg" href="https://metapixl.com/vittorio" />
                 <IconLink iconSrc="streamline-pixel-email-envelope-close.svg" href="mailto:victor@cherkashyn.me" />
                 <IconLink iconSrc="streamline-pixel-coding-apps-websites-programming-browser.svg" href="https://github.com/verbey" />
+                <IconLink iconSrc="streamline-pixel-interface-essential-wifi-feed.svg" href="https://cherkashyn.me/feed.xml" />
             </div>
 		</footer>);
 }
