@@ -31,6 +31,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' className={departureMono.variable}>
+			<head>	
+				<link rel="icon" href="/favicon.ico" sizes="any" />
+			</head>
 			<body className={styles.pageLayout}>
 				{children}
 				<Footer />
