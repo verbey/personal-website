@@ -1,14 +1,14 @@
-"use client";
-
 import Link from 'next/link';
 
 import styles from './Navbar.module.css';
 
-import useNavbar from './useNavbar';
+type ActiveTab = 'home' | 'blog' | 'about' | '';
 
-export default function Navbar() {
-	const navbarState = useNavbar();
-	const activeTab = navbarState?.activeTab ?? '';
+type NavbarProps = {
+	activeTab?: ActiveTab;
+};
+
+export default function Navbar(props: NavbarProps) {
 
 	return (
 		<>
@@ -18,11 +18,8 @@ export default function Navbar() {
 					<li>
 						<Link
 							href='/'
-							className={
-								activeTab === 'home'
-									? styles.navbarLink + ' ' + styles.activeTab
-									: styles.navbarLink
-							}
+							className={`${styles.navbarLink} ${props.activeTab === 'home' ? styles.activeTab : ''}`.trim()}
+							aria-current={props.activeTab === 'home' ? 'page' : undefined}
 						>
 							Home
 						</Link>
@@ -30,11 +27,8 @@ export default function Navbar() {
 					<li>
 						<Link
 							href='/blog'
-							className={
-								activeTab === 'blog'
-									? styles.navbarLink + ' ' + styles.activeTab
-									: styles.navbarLink
-							}
+							className={`${styles.navbarLink} ${props.activeTab === 'blog' ? styles.activeTab : ''}`.trim()}
+							aria-current={props.activeTab === 'blog' ? 'page' : undefined}
 						>
 							Blog
 						</Link>
@@ -51,11 +45,8 @@ export default function Navbar() {
 					<li>
 						<Link
 							href='/about'
-							className={
-								activeTab === 'about'
-									? styles.activeTab + ' ' + styles.navbarLink
-									: styles.navbarLink
-							}
+							className={`${styles.navbarLink} ${props.activeTab === 'about' ? styles.activeTab : ''}`.trim()}
+							aria-current={props.activeTab === 'about' ? 'page' : undefined}
 						>
 							About me
 						</Link>

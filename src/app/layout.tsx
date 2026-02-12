@@ -4,7 +4,6 @@ import './globals.css';
 import localFont from 'next/font/local';
 import styles from './layout.module.css';
 
-import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 
 const departureMono = localFont({
@@ -33,8 +32,7 @@ export default function RootLayout({
 	return (
 		<html lang='en' className={departureMono.variable}>
 			<body className={styles.pageLayout}>
-				<Navbar />
-				<main className={styles.mainContent}>{children}</main>
+				{children}
 				<Footer />
 			</body>
 		</html>
