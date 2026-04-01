@@ -2,7 +2,8 @@ import styles from './IconLink.module.css';
 
 interface IconLinkProps {
 	iconSrc: string;
-    href: string;
+	href: string;
+	alt?: string;
 }
 
 export default function IconLink(props: IconLinkProps) {
@@ -27,6 +28,7 @@ export default function IconLink(props: IconLinkProps) {
 					maskImage: `url(${iconPath})`,
 				}}
 			/>
+			{props.alt && <span className={styles.altText}>{props.alt}</span>}
 		</a>
 	);
 }
