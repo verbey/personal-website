@@ -17,7 +17,7 @@ export default function Archive() {
 			<header>
 				<h1 className={infoPageStyles.title}>Blog Posts</h1>
 			</header>
-			<main>
+			<main className={styles.postsContainer}>
 				{posts.map((post) => (
 					<a
 						key={post.slug}

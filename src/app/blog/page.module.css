@@ -8,7 +8,7 @@
 	content: '';
 	position: absolute;
 	top: 0;
-	left: -0.6svw; 
+	left: -0.6svw;
 	width: 0.6svw;
 	height: 100%;
 	box-shadow:
@@ -19,7 +19,7 @@
 
 
 
-.post > h2 {
+.post>h2 {
 	color: var(--accent);
 	font-family: var(--font-departure-mono);
 }
@@ -42,4 +42,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1svw;
+}
+
+.postsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: max(1rem, 2svh);
 }
