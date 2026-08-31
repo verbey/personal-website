@@ -4,9 +4,28 @@
         <description><![CDATA[Victor Cherkashyn's blog]]></description>
         <link>https://cherkashyn.me</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 01 Apr 2026 19:25:57 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 31 Aug 2026 21:06:37 GMT</lastBuildDate>
         <atom:link href="https://cherkashyn.me/feed.xml" rel="self" type="application/rss+xml"/>
         <language><![CDATA[en]]></language>
+        <item>
+            <title><![CDATA[Password manager user on the spectrum]]></title>
+            <description><![CDATA[<p>The task I self-assigned to myself was to deploy Proxmox VE on a Mini PC in order to turn it into a server. This requires creating credentials for web interface. SSH key is important to have too. Of course, my ADHD—or whatever other buzzword I self-diagnosed myself with—kicked in right after I noticed how cluttered my password manager had become.</p>
+<p>Since the beginning of my password vault, the structure had been as follows:</p>
+<p>Root<br>|----Email provider folder 1<br>|----Email provider folder 2<br>...<br>|----Email provider folder N</p>
+<p>After years of adding new accounts, navigating my password manager became cumbersome. The impact was most evident in the Root folder, where the new entries were now placed. Instead of relying on the search function—like any normal person would—I decided that before deploying my homelab, I had to confront the inner demon whispering in my ear to reorganise how and where I save my credentials.</p>
+<p>To do that, I first skimmed through all entries to locate any non-used ones. Unfortunate winners of such hunger games had to be requested for removal from the server of the service provider&#39;s server and then deleted from the vault. There&#39;s a helpful website called <a href="https://justdeleteme.xyz/en" target="_blank" rel="noopener noreferrer">JustDeleteMe</a> greatly simplifies this process: it crowdsources information on how to delete your account on different services. Now, instead of scanning through FAQs, user forums, and asking support teama, you are presented with a direct link straight to the account removal form. In cases where such an option doesn&#39;t exist or the service insists you must talk to the support team first, JustDeleteMe mentions that as well, which also saves time immensely. </p>
+<p>Somewhere during the aforementioned process, I stumbled upon a hilarious case of an online casino taking over a website that previously hosted online Math olympiads for high schoolers. The latest <a href="https://web.archive.org/web/20260215102445/https://deltamatem.km.ua/" target="_blank" rel="noopener noreferrer">Wayback Machine capture</a> still shows the original website as of 25th of February. Permanent links seem to be an unknown concept to Ukrainian bureaucracy. Probably as well as anything permanent. Or maybe it was an honest mistake by someone who forgot to renew their domain name, who knows.</p>
+<p>Next, I took the time to migrate emails for certain accounts, as I now treat all aliases hosted on my email provider&#39;s domain as disposable. Everything that matters to me now lives on my own domain, cherkashyn.me. I am still torn about cases like Steam: on one hand, I don&#39;t really want my gaming account to be tied to my real identity, but on the other hand, I wasted enough money on video games that losing access to my email and Steam library would be greatly disappointing.</p>
+<p>Lastly, I created subdirectories for each service category that had 3+ entries in it. I have a decent amount of these, and some were even awarded a fancy icon! Doing this took multiple lunch breaks at work, but by the end of the week, I was remarkably satisfied with the state of my password database.</p>
+<p>Each entry is now happily thriving within its semantic category:</p>
+<p>Root<br>|----Dev<br>|----Learning<br>...<br>|----Hardware</p>
+<p>As you might have suspected, Proxmox VE on my homelab was not deployed until a few weeks later. Another day — another banger ᕙ( •̀ ᗜ •́ )ᕗ</p>
+]]></description>
+            <link>https://cherkashyn.me/blog/undefined</link>
+            <guid isPermaLink="false">https://cherkashyn.me/blog/undefined</guid>
+            <dc:creator><![CDATA[Victor Cherkashyn]]></dc:creator>
+            <pubDate>Sun, 30 Aug 2026 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Coding a simple Bash Image Optimiser!]]></title>
             <description><![CDATA[<h2>Table of contents</h2>
