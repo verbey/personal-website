@@ -2,20 +2,22 @@
     import Link from "$lib/components/elements/Link.svelte";
 </script>
 
-<ul class="navigation">
-    <li>
-        <Link href="/">Home</Link>
-    </li>
-    <li>
-        <Link href="/about">About</Link>
-    </li>
-    <li>
-        <Link href="/contact">Contact</Link>
-    </li>
-</ul>
+<nav>
+    <ul class="navigationOptions">
+        <li>
+            <Link href="/">Home</Link>
+        </li>
+        <li>
+            <Link href="/about">About</Link>
+        </li>
+        <li>
+            <Link href="/contact">Contact</Link>
+        </li>
+    </ul>
+</nav>
 
 <style>
-    .navigation {
+    .navigationOptions {
         list-style-type: none;
         display: flex;
         flex-direction: row;

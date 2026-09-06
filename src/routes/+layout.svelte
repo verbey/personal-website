@@ -5,6 +5,7 @@
 	import Logo from "$lib/components/Logo/Logo.svelte";
 
 	let { children } = $props();
+	export const prerender = true;
 </script>
 
 <svelte:head>
@@ -13,9 +14,9 @@
 
 <Logo />
 <Navigation />
-<div class="content">
+<main class="content">
 	{@render children()}
-</div>
+</main>
 
 <style>
 	:global {
@@ -29,7 +30,7 @@
 
 		@media (prefers-color-scheme: dark) {
 			:root {
-				--text: #d1cb93;
+				--text: #dbd8be;
 				--background: #000000;
 				--primary: #3d0000;
 				--secondary: #262626;
@@ -46,31 +47,44 @@
 			background: var(--background);
 		}
 
+		body {
+			padding: 8px;
+		}
+
 		.content {
-			padding: 0 450px;
+			padding: clamp(2rem, 5vw, 4rem) 450px;
+		}
+
+		p {
+			line-height: 1.5rem;
+			margin: 0 0 1rem 0;
 		}
 
 		@media screen and (max-width: 1300px) {
 			.content {
-				padding: 0 200px;
+				padding-left: 200px;
+				padding-right: 200px;
 			}
 		}
 
 		@media screen and (max-width: 800px) {
 			.content {
-				padding: 0 100px;
+				padding-left: 100px;
+				padding-right: 100px;
 			}
 		}
 
 		@media screen and (max-width: 520px) {
 			.content {
-				padding: 0 50px;
+				padding-left: 50px;
+				padding-right: 50px;
 			}
 		}
 
 		@media screen and (max-width: 420px) {
 			.content {
-				padding: 0 16px;
+				padding-left: 16px;
+				padding-right: 16px;
 			}
 		}
 
