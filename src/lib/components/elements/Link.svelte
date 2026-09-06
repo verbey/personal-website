@@ -1,7 +1,9 @@
 <script lang="ts">
-    let { href, text } = $props<{
+    import type { Snippet } from "svelte";
+
+    let { href, children } = $props<{
         href: string;
-        text: string;
+        children: Snippet;
     }>();
 
     function hashString(value: string): number {
@@ -21,7 +23,8 @@
 <a {href}>
     <span
         style:animation-delay={`${randomDelay}s`}
-        style:animation-duration={`${randomDuration}s`}>{text}</span
+        style:animation-duration={`${randomDuration}s`}
+        >{@render children()}</span
     >
 </a>
 

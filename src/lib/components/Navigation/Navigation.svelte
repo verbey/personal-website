@@ -4,13 +4,13 @@
 
 <ul class="navigation">
     <li>
-        <Link href="/" text="Home" />
+        <Link href="/">Home</Link>
     </li>
     <li>
-        <Link href="/about" text="About" />
+        <Link href="/about">About</Link>
     </li>
     <li>
-        <Link href="/contact" text="Contact" />
+        <Link href="/contact">Contact</Link>
     </li>
 </ul>
 
