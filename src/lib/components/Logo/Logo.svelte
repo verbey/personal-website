@@ -1,5 +1,4 @@
 <script lang="ts">
-    // @ts-expect-error Svelte component imports use a non-TypeScript extension.
     import Halo from "$lib/components/Logo/Halo.svelte";
 </script>
 
