@@ -5,7 +5,6 @@
 	import Logo from "$lib/components/Logo/Logo.svelte";
 
 	let { children } = $props();
-	export const prerender = true;
 </script>
 
 <svelte:head>
