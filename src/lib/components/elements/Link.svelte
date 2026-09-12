@@ -6,18 +6,15 @@
         children: Snippet;
     }>();
 
-    function hashString(value: string): number {
-        let hash = 0;
-
-        for (let i = 0; i < value.length; i++) {
-            hash = (hash << 5) - hash + value.charCodeAt(i);
-        }
-
-        return Math.abs(hash);
+    function randomValue(): number {
+        return Number.parseInt(
+            crypto.randomUUID().replaceAll("-", "").slice(0, 8),
+            16,
+        );
     }
 
-    const randomDelay = $derived(hashString(href) % 5);
-    const randomDuration = $derived(2 + (hashString(href) % 8));
+    const randomDelay = $derived(randomValue() % 5);
+    const randomDuration = $derived(2 + (randomValue() % 8));
 </script>
 
 <a {href}>
@@ -32,7 +29,6 @@
     a {
         position: relative;
         display: inline-block;
-        padding: 0.2rem 0.35rem;
         text-decoration: none;
         border-bottom: 1px solid var(--accent);
         isolation: isolate;

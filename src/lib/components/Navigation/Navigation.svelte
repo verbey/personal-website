@@ -8,6 +8,9 @@
             <Link href="/">Home</Link>
         </li>
         <li>
+            <Link href="/archive">Archive</Link>
+        </li>
+        <li>
             <Link href="/about">About</Link>
         </li>
         <li>

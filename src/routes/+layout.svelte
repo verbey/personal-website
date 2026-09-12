@@ -20,11 +20,11 @@
 <style>
 	:global {
 		:root {
-			--text: #16160d;
-			--background: #e9e9c7;
-			--primary: #772424;
-			--secondary: #d5d4d0;
-			--accent: #ff2708;
+			--text: #000000;
+			--background: #f0f0d7;
+			--primary: #ffad9d;
+			--secondary: #d8d6cf;
+			--accent: #c71b00;
 		}
 
 		@media (prefers-color-scheme: dark) {
