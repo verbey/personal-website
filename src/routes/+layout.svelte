@@ -67,7 +67,7 @@
 			flex-direction: column;
 			gap: 0.5rem;
 			margin: 0;
-			padding-left: 2rem;
+			padding-left: 1rem;
 		}
 
 		li {

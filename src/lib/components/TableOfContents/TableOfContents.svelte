@@ -22,4 +22,12 @@
     .tableOfContents {
         padding: 2rem 0;
     }
+
+    li {
+        list-style-type: "# ";
+    }
+
+    li::marker {
+        color: var(--secondary);
+    }
 </style>
