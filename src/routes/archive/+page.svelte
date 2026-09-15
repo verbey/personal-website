@@ -43,7 +43,7 @@
                     <p class="archiveEntryDescription">
                         {entry.frontmatter.description}
                     </p>
-                    <Link href="/{entry.slug}">Read more</Link>
+                    <Link href="/archive/{entry.slug}">Read more</Link>
                 </article>
             {/each}
         </section>

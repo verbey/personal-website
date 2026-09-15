@@ -31,4 +31,8 @@
         padding: 2px 0 4px 0;
         position: sticky;
     }
+
+    li {
+        list-style: none;
+    }
 </style>

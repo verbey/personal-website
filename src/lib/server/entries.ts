@@ -2,6 +2,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import matter from 'gray-matter';
 import type { ArchiveEntry } from '$lib/types/ArchiveEntry';
+import { getTableOfContents } from '$lib/server/markdown';
 
 const entriesDirectory = join(process.cwd(), 'src/content/entries');
 
@@ -19,7 +20,8 @@ export async function getArchiveEntries(): Promise<ArchiveEntry[]> {
                 return {
                     frontmatter: archiveEntry.data,
                     content: archiveEntry.content,
-                    slug: file.replace(/\.md$/, '')
+                    slug: file.replace(/\.md$/, ''),
+                    tableOfContents: getTableOfContents(archiveEntry.content)
                 };
             })
     );

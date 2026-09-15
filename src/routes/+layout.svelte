@@ -3,6 +3,7 @@
 	import favicon from "$lib/assets/favicon.svg";
 	import Navigation from "$lib/components/Navigation/Navigation.svelte";
 	import Logo from "$lib/components/Logo/Logo.svelte";
+	import "$lib/styles/prism-vsc-dark-plus.css";
 
 	let { children } = $props();
 </script>
@@ -56,7 +57,23 @@
 
 		p {
 			line-height: 1.5rem;
-			margin: 0 0 1rem 0;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			margin: 0;
+			padding-left: 2rem;
+		}
+
+		li {
+			line-height: 1.5rem;
+			list-style-type: square;
+		}
+
+		li::marker {
+			color: var(--accent);
 		}
 
 		@media screen and (max-width: 1300px) {

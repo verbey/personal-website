@@ -1,7 +1,21 @@
 import adapter from '@sveltejs/adapter-netlify';
+import { mdsvex } from 'mdsvex';
+import rehypeSlug from 'rehype-slug';
+import { resolve } from 'node:path';
+
+const markdownLayout = resolve('src/lib/markdown-layouts/Layout.svelte');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+    extensions: ['.svelte', '.md', '.svx'],
+    preprocess: [
+        mdsvex({
+            extensions: ['.md', '.svx'],
+            layout: markdownLayout,
+            layoutPropForwarding: 'runes',
+            rehypePlugins: [rehypeSlug]
+        })
+    ],
     kit: {
         // default options are shown
         adapter: adapter({
