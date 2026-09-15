@@ -52,7 +52,10 @@
 		}
 
 		.content {
-			padding: clamp(2rem, 5vw, 4rem) 450px;
+			padding: clamp(2rem, 5vw, 3rem) 450px;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
 		}
 
 		p {
