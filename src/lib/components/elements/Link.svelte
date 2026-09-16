@@ -1,8 +1,14 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
 
-    let { href, children } = $props<{
+    let {
+        href,
+        class: className,
+        children,
+        ...attributes
+    } = $props<{
         href: string;
+        class?: string;
         children: Snippet;
     }>();
 
@@ -15,15 +21,22 @@
 
     const randomDelay = $derived(randomValue() % 5);
     const randomDuration = $derived(2 + (randomValue() % 8));
+    const isHeadingAnchor = $derived(
+        className?.split(/\s+/).includes("headingAnchor") ?? false,
+    );
 </script>
 
-<a {href}>
-    <span
-        style:animation-delay={`${randomDelay}s`}
-        style:animation-duration={`${randomDuration}s`}
-        >{@render children()}</span
-    >
-</a>
+{#if isHeadingAnchor}
+    <a {href} class={className} {...attributes}>{@render children()}</a>
+{:else}
+    <a {href} {...attributes}>
+        <span
+            style:animation-delay={`${randomDelay}s`}
+            style:animation-duration={`${randomDuration}s`}
+            >{@render children()}</span
+        >
+    </a>
+{/if}
 
 <style>
     a {
@@ -32,6 +45,20 @@
         text-decoration: none;
         border-bottom: 1px solid var(--accent);
         isolation: isolate;
+    }
+
+    a.headingAnchor {
+        color: var(--secondary);
+        border-bottom: 1px solid transparent;
+        margin-right: 0.25rem;
+    }
+
+    a.headingAnchor:hover {
+        border-bottom-color: var(--secondary);
+    }
+
+    a.headingAnchor::before {
+        display: none;
     }
 
     span {

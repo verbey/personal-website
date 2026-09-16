@@ -1,11 +1,23 @@
 import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { resolve } from 'node:path';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 const markdownLayout = resolve('src/lib/markdown-layouts/Layout.svelte');
+const autolinkHeadingsPlugin = [
+	rehypeAutolinkHeadings,
+	{
+		behavior: 'prepend',
+		content: { type: 'text', value: '#' },
+		properties: {
+			ariaLabel: 'Link to heading',
+			className: ['headingAnchor']
+		}
+	}
+] as any;
 
 export default defineConfig({
 	plugins: [
@@ -16,7 +28,10 @@ export default defineConfig({
 					extensions: ['.md', '.svx'],
 					layout: markdownLayout,
 					layoutPropForwarding: 'runes',
-					rehypePlugins: [rehypeSlug]
+					rehypePlugins: [
+						rehypeSlug,
+						autolinkHeadingsPlugin
+					]
 				})
 			],
 			compilerOptions: {

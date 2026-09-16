@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "bits-ui": "^2.19.0",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "rehype-autolink-headings": "^7.1.0"
   }
 }

@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-netlify';
 import { mdsvex } from 'mdsvex';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { resolve } from 'node:path';
 
@@ -13,7 +14,17 @@ const config = {
             extensions: ['.md', '.svx'],
             layout: markdownLayout,
             layoutPropForwarding: 'runes',
-            rehypePlugins: [rehypeSlug]
+            rehypePlugins: [
+                rehypeSlug,
+                [rehypeAutolinkHeadings, {
+                    behavior: 'prepend',
+                    content: { type: 'text', value: '#' },
+                    properties: {
+                        ariaLabel: 'Link to heading',
+                        className: ['headingAnchor']
+                    }
+                }]
+            ]
         })
     ],
     kit: {
