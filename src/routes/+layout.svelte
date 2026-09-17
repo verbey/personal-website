@@ -1,8 +1,8 @@
 <script lang="ts">
 	import "./reset.css";
-	import favicon from "$lib/assets/favicon.svg";
 	import Navigation from "$lib/components/Navigation/Navigation.svelte";
 	import Logo from "$lib/components/Logo/Logo.svelte";
+	import favicon from "$lib/assets/skull.webp";
 	import "$lib/styles/prism-vsc-dark-plus.css";
 
 	let { children } = $props();
