@@ -28,7 +28,6 @@
         justify-content: center;
         gap: 1rem;
         background: var(--secondary);
-        padding: 2px 0 4px 0;
         position: sticky;
     }
 
