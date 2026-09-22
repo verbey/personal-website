@@ -9,19 +9,26 @@
     navigation bar above.
 </p>
 <p>
-    The scope of this site is IT-adjacent. Content centers on areas I work with
-    regularly, including web development, system administration, and
-    infrastructure, alongside occasional dives into computer science concepts
-    and DevOps, with a probable focus on containers due to my hyperfixation at
-    the moment. There will be no metablogging or posts discussing the process of
-    running a blog; the intent is to keep the material focused purely on
-    technical work, projects, and learning. Posts covering entertainment media
-    such as anime, cinema, and television series will live on a separate
-    dedicated website in the future to preserve the technical focus here.
-</p>
-<p>
     With some luck and proper discipline, hopefully this iteration will actually
     be maintained consistently and built properly, unlike the previous attempt.
-    Direct messages can be sent to the email address hosted on this domain at
-    <Link href="mailto:victor@cherkashyn.me">victor@cherkashyn.me</Link>.
+    This time, though, not only I have a better understanding of how to <em
+        >build</em
+    > a website, but also now I live a life full of stories to reflect on.
 </p>
+<p>
+    For no particular reason, please enjoy an ASCII wall-mounted carpet below
+    this text:
+</p>
+<pre>
+&lt;&gt;================================&lt;&gt;     
+||\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/||    
+||&lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt;|| 
+||/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\||
+||================================||
+||&lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt;||
+||================================|| 
+||/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\||   
+||&lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt; &lt;&gt;||
+||\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/||
+&lt;&gt;================================&lt;&gt;
+</pre>

@@ -79,6 +79,10 @@
 			color: var(--accent);
 		}
 
+		pre {
+			margin: 0;
+		}
+
 		@media screen and (max-width: 1300px) {
 			.content {
 				padding-left: 200px;
