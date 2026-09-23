@@ -80,6 +80,7 @@
 		}
 
 		pre {
+			overflow-x: scroll;
 			margin: 0;
 		}
 

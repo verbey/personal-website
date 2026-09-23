@@ -16,6 +16,9 @@
         <li>
             <Link href="/contact">Contact</Link>
         </li>
+        <li>
+            <Link href="/feed">RSS</Link>
+        </li>
     </ul>
 </nav>
 
@@ -26,6 +29,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        overflow-x: scroll;
         gap: 1rem;
         background: var(--secondary);
         position: sticky;
@@ -33,5 +37,6 @@
 
     li {
         list-style: none;
+        flex: 0 0 auto;
     }
 </style>
