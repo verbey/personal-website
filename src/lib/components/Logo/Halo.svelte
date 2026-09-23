@@ -12,5 +12,6 @@
         position: relative;
         right: 1.5rem;
         z-index: 1;
+        filter: drop-shadow(-2px 3px 7px #fff);
     }
 </style>

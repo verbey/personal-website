@@ -20,6 +20,8 @@
         margin: 0;
         padding: 0;
         z-index: 2;
+        -webkit-text-stroke: 3px var(--background);
+        paint-order: stroke fill;
     }
 
     @media screen and (max-width: 360px) {
