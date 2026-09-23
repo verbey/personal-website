@@ -35,6 +35,10 @@
         position: sticky;
     }
 
+    ul {
+        padding: 0;
+    }
+
     li {
         list-style: none;
         flex: 0 0 auto;
