@@ -84,6 +84,12 @@
 			margin: 0;
 		}
 
+		code {
+			font-size: 0.9rem;
+			font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+				Consolas, "DejaVu Sans Mono", monospace;
+		}
+
 		@media screen and (max-width: 1300px) {
 			.content {
 				padding-left: 200px;
