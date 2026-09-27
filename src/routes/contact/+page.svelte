@@ -18,9 +18,10 @@
         >
     </li>
     <li>
-        <Link
+        SimpleX: <Link
             href="https://smp8.simplex.im/a#DXcjggV102gG-y2Sum9m8p9tr54gybHebJroqdkAHqE"
-            >SimpleX link</Link
+        >
+            link</Link
         >
     </li>
     <li>XMPP: @vittorio_soprano:tchncs.de</li>
