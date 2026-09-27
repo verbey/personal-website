@@ -11,9 +11,7 @@
 <p>
     With some luck and proper discipline, hopefully this iteration will actually
     be maintained consistently and built properly, unlike the previous attempt.
-    This time, though, not only I have a better understanding of how to <em
-        >build</em
-    > a website, but also now I live a life full of stories to reflect on.
+    Building upon SvelteKit is a breeze, which makes the task easy.
 </p>
 <p>
     For no particular reason, please enjoy an ASCII wall-mounted carpet below
