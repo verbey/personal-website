@@ -25,7 +25,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: safe center;
         overflow-x: scroll;
         gap: 1rem;
         background: var(--secondary);
