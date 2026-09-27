@@ -21,7 +21,7 @@
     <header class="entryHeader">
         <h1>{data.entry.frontmatter.title}</h1>
         <time datetime={data.entry.frontmatter.date}>
-            Published on {data.entry.frontmatter.date}
+            Published on {new Date(data.entry.frontmatter.date).toDateString()}.
         </time>
     </header>
     <div class="entryBody">

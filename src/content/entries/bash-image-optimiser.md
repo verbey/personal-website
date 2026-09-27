@@ -2,7 +2,7 @@
 title: 'Coding a simple Bash Image Optimiser!'
 description: 'A short guide to use bash to create a tool to automatically detect new images and try to reduce their size.'
 tags: ['bash', 'linux', 'coding']
-date: 05-26-2024
+date: 2024-05-26
 ---
 
 ## Introduction

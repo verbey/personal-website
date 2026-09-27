@@ -1,6 +1,6 @@
 ---
 title: Password manager user on the spectrum
-date: 08-30-2026
+date: 2026-08-30
 tags: ['security', 'misc']
 description: I am oddly obsessed with ensuring my password manager's contents are well-organised and adhere to best practices.
 ---
