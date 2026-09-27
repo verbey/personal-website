@@ -17,7 +17,7 @@
 
     .logoText {
         font-size: 2rem;
-        margin: 0;
+        margin: 0 0 0 2rem;
         padding: 0;
         z-index: 2;
         -webkit-text-stroke: 3px var(--background);
