@@ -2,6 +2,7 @@
 	import "./reset.css";
 	import Navigation from "$lib/components/Navigation/Navigation.svelte";
 	import Logo from "$lib/components/Logo/Logo.svelte";
+	import Footer from "$lib/components/Footer/Footer.svelte";
 	import favicon from "$lib/assets/skull.webp";
 	import "$lib/styles/prism-vsc-dark-plus.css";
 
@@ -17,6 +18,7 @@
 <main class="content">
 	{@render children()}
 </main>
+<Footer />
 
 <style>
 	:global {
@@ -49,6 +51,9 @@
 
 		body {
 			padding: 8px;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
 		}
 
 		.content {
@@ -56,6 +61,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
+			flex: 1;
 		}
 
 		p {

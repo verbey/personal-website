@@ -16,9 +16,6 @@
         <li>
             <Link href="/contact">Contact</Link>
         </li>
-        <li>
-            <Link href="/feed">RSS</Link>
-        </li>
     </ul>
 </nav>
 
