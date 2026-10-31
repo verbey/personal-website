@@ -41,10 +41,15 @@
 <style>
     a {
         position: relative;
-        display: inline-block;
-        text-decoration: none;
         isolation: isolate;
         padding: 0 2px;
+    }
+
+    a:not(.headingAnchor) {
+        text-decoration-line: underline;
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.1em;
     }
 
     a.headingAnchor {
@@ -85,23 +90,9 @@
         animation: shine linear infinite;
     }
 
-    a::before {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
-        z-index: 0;
-        pointer-events: none;
-        content: "";
-        background-color: var(--accent);
-        transition: all 0.3s ease-in-out;
-    }
-
     @media (hover: hover) and (pointer: fine) {
-        a:hover::before {
-            bottom: 0;
-            height: 100%;
+        a:not(.headingAnchor):hover {
+            background-color: var(--accent);
         }
     }
 
