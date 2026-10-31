@@ -18,4 +18,9 @@
         flex-direction: column;
         gap: 1.5rem;
     }
+
+    .markdownContent :global(blockquote) {
+        border-left: 4px solid var(--secondary);
+        padding-left: 1rem;
+    }
 </style>
