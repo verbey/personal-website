@@ -1,5 +1,5 @@
 ---
-title: Cache #1
+title: 'Cache #1'
 date: 2026-10-31
 tags: ['cache']
 description: First edition of Cache, a series where I share notable links I have found recently!
