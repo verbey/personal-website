@@ -1,4 +1,4 @@
-import type { TOCEntry } from '$lib/types/TOCEntry';
+import type { TOCEntry } from '#lib/types/TOCEntry.js';
 
 const headingPattern = /^(#{2,3})[ \t]+(.+?)[ \t]*#*[ \t]*$/;
 

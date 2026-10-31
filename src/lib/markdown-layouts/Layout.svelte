@@ -1,5 +1,5 @@
 <script module lang="ts">
-    import Link from "$lib/components/elements/Link.svelte";
+    import Link from "#lib/components/elements/Link.svelte";
 
     export { Link as a };
 </script>

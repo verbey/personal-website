@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { ArchiveEntry } from "$lib/types/ArchiveEntry";
-    import Link from "$lib/components/elements/Link.svelte";
+    import type { ArchiveEntry } from "#lib/types/ArchiveEntry.js";
+    import Link from "#lib/components/elements/Link.svelte";
     let { data } = $props<{ data: { archiveEntries: ArchiveEntry[] } }>();
 
     type YearGroup = {

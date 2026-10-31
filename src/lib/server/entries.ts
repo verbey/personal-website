@@ -1,8 +1,8 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import matter from 'gray-matter';
-import type { ArchiveEntry } from '$lib/types/ArchiveEntry';
-import { getTableOfContents } from '$lib/server/markdown';
+import type { ArchiveEntry } from '#lib/types/ArchiveEntry.js';
+import { getTableOfContents } from '#lib/server/markdown.js';
 
 const entriesDirectory = join(process.cwd(), 'src/content/entries');
 

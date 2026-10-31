@@ -1,10 +1,10 @@
 <script lang="ts">
 	import "./reset.css";
-	import Navigation from "$lib/components/Navigation/Navigation.svelte";
-	import Logo from "$lib/components/Logo/Logo.svelte";
-	import Footer from "$lib/components/Footer/Footer.svelte";
-	import favicon from "$lib/assets/skull.webp";
-	import "$lib/styles/prism-vsc-dark-plus.css";
+	import Navigation from "#lib/components/Navigation/Navigation.svelte";
+	import Logo from "#lib/components/Logo/Logo.svelte";
+	import Footer from "#lib/components/Footer/Footer.svelte";
+	import favicon from "#lib/assets/skull.webp";
+	import "#lib/styles/prism-vsc-dark-plus.css";
 
 	let { children } = $props();
 </script>

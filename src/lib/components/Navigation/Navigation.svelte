@@ -1,5 +1,5 @@
 <script>
-    import Link from "$lib/components/elements/Link.svelte";
+    import Link from "#lib/components/elements/Link.svelte";
 </script>
 
 <nav>

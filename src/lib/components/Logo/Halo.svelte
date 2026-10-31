@@ -1,5 +1,5 @@
 <script lang="ts">
-    import halo from "$lib/assets/halo.webp";
+    import halo from "#lib/assets/halo.webp";
 </script>
 
 <img src={halo} alt="Halo" class="halo" />

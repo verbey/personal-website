@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Halo from "$lib/components/Logo/Halo.svelte";
+    import Halo from "#lib/components/Logo/Halo.svelte";
 </script>
 
 <div class="logoContainer">

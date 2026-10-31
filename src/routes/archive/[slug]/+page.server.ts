@@ -1,5 +1,5 @@
 import { error } from "@sveltejs/kit";
-import { getArchiveEntries } from "$lib/server/entries";
+import { getArchiveEntries } from "#lib/server/entries.js";
 
 export const prerender = true;
 

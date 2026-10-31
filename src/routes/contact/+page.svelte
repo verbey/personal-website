@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Link from "$lib/components/elements/Link.svelte";
+    import Link from "#lib/components/elements/Link.svelte";
 </script>
 
 <p>There's a myriad of ways you can reach out to or follow me</p>

@@ -1,4 +1,4 @@
-import { getArchiveEntries } from '$lib/server/entries';
+import { getArchiveEntries } from '#lib/server/entries.js';
 
 const siteUrl = 'https://cherkashyn.me';
 

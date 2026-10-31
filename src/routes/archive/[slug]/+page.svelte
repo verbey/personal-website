@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { Component } from "svelte";
-    import type { ArchiveEntry } from "$lib/types/ArchiveEntry";
-    import TableOfContents from "$lib/components/TableOfContents/TableOfContents.svelte";
+    import type { ArchiveEntry } from "#lib/types/ArchiveEntry.js";
+    import TableOfContents from "#lib/components/TableOfContents/TableOfContents.svelte";
 
     let { data } = $props<{ data: { entry: ArchiveEntry } }>();
 

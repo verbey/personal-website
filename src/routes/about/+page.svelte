@@ -1,7 +1,7 @@
 <script lang="ts">
-    import Image from "$lib/components/elements/Image.svelte";
-    import Link from "$lib/components/elements/Link.svelte";
-    import afflicted from "$lib/assets/afflicted.webp";
+    import Image from "#lib/components/elements/Image.svelte";
+    import Link from "#lib/components/elements/Link.svelte";
+    import afflicted from "#lib/assets/afflicted.webp";
 </script>
 
 <p>

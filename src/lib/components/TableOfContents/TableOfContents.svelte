@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { TOCEntry } from "$lib/types/TOCEntry";
-    import Link from "$lib/components/elements/Link.svelte";
+    import type { TOCEntry } from "#lib/types/TOCEntry.js";
+    import Link from "#lib/components/elements/Link.svelte";
 
     let { entries } = $props<{ entries: TOCEntry[] }>();
 </script>
