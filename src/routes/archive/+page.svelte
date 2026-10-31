@@ -72,6 +72,7 @@
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+        width: 100%;
     }
 
     .archiveYear:first-child .archiveEntry:first-of-type {
