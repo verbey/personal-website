@@ -7,17 +7,6 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 const markdownLayout = resolve('src/lib/markdown-layouts/Layout.svelte');
-const autolinkHeadingsPlugin = [
-	rehypeAutolinkHeadings,
-	{
-		behavior: 'prepend',
-		content: { type: 'text', value: '#' },
-		properties: {
-			ariaLabel: 'Link to heading',
-			className: ['headingAnchor']
-		}
-	}
-] as any;
 
 export default defineConfig({
 	plugins: [
