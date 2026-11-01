@@ -55,4 +55,10 @@
         flex-direction: column;
         gap: 1rem;
     }
+
+    .entry {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 </style>
