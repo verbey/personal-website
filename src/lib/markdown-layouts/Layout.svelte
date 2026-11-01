@@ -47,4 +47,13 @@
         color: var(--secondary);
         content: "###";
     }
+
+    @media screen and (max-width: 520px) {
+        .markdownContent :global(h2 > .headingAnchor),
+        .markdownContent :global(h3 > .headingAnchor) {
+            position: static;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+    }
 </style>
